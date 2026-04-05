@@ -1,18 +1,17 @@
-from pydantic import BaseModel
-from typing import Optional
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
+from database import Base
 
-class UserBase(BaseModel):
-    name: str
-    phone: str
-    address: str
+class User(Base):
+    __tablename__ = "users"
+    user_id = Column(Integer, primary_key=True, index=True)
+    
+    name = Column(String, nullable=False)
+    email = Column(String, unique=True, nullable=False)
+    phone = Column(String, nullable = False)
+    address = Column(String, nullable=False)
 
-class UserCreate(UserBase):
-    email: Optional[str]
-    password: Optional[str]
+    password = Column(String, nullable=False)
 
-class UserResponse(UserBase):
-    id: int
-    is_guest: bool
-
-    class Config:
-        from_attributes = True
+    orders = relationship("Order", back_populates="user")
+    reviews = relationship("Review", back_populates="user")
