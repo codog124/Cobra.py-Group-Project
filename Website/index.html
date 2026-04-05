@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobra Team Bios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+
+<header>
+    <h1><strong>Meet Our Team</strong></h1>
+    <!-- Example team logo -->
+    <img src="img/logo.png" alt="Team Logo" class="team-logo">
+
+    <!-- Navigation menu to switch between sections -->
+    <nav>
+        <button onclick="showSection('bios')">Team Bios</button>
+        <button onclick="showSection('vision')">Team Vision</button>
+    </nav>
+</header>
+
+<!-- Team bios section (default section) -->
+<div id="bios" class="container">
+    <!-- Each card represents an individual team member -->
+    <div class="card1">
+        <h2>Member 1</h2>
+        <p><em>Title</em></p>
+        <button onclick="toggleBio('bio1', 'img1')">Show Bio</button>
+        <p id="bio1" class="bio">Put bio here</p>
+    </div>
+    <div class="card2">
+        <h2>Member 2</h2>
+        <p><em>Title</em></p>
+        <button onclick="toggleBio('bio2', 'img2')">Show Bio</button>
+        <p id="bio2" class="bio">Put bio here</p>
+    </div>
+    <div class="card3">
+        <h2>Member 3</h2>
+        <p><em>Title</em></p>
+        <button onclick="toggleBio('bio3', 'img3')">Show Bio</button>
+        <p id="bio3" class="bio">Put bio here</p>
+    </div>
+    <div class="card4">
+        <h2>Member 4</h2>
+        <p><em>Title</em></p>
+        <button onclick="toggleBio('bio4', 'img4')">Show Bio</button>
+        <p id="bio4" class="bio">Put bio here</p>
+    </div>
+    <div class="card5">
+        <h2>Nate Merritt</h2>
+        <p><em>Scrum Master/Website Designer</em></p>
+        <button onclick="toggleBio('bio5', 'img5')">Show Bio</button>
+        <img id="img5" src="img/profile-pic-nate.jpg" alt="Nate" class="bio-img">
+        <div id="bio5" class="bio">
+        <p>Nate is a junior majoring in Cybersecurity who loves drawing and hiking. Some of his favorite CS tools and resources include:</p>
+        <ul>
+            <li><a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a> (for learning new programming languages)</li>
+            <li><a href="https://www.pinterest.com/" target="_blank">Pinterest</a> (for design inspiration)</li>
+            <li><a href="https://stackoverflow.com/questions" target="_blank">Stack Overflow</a> (for getting answers to very specific programming issues)</li>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Team vision/mission statement section (hidden by default) -->
+<div id="vision" class="container" style="display: none;">
+    <div class="mission-text">
+    <h2><strong>Our Mission Statement</strong></h2>
+    <p>We strive to foster a collaborative, transparent, and accountable environment where team members feel confident in doing their best and communicating openly. Our mission is to uphold the Scrum values: commitment, courage, focus, openness, and respect, so that we can deliver high-quality results while continuously supporting each other’s growth and success.</p>
+    <h2><strong>Our Rules</strong></h2>
+    <p> If a team member falls behind, they should communicate this during meetings or immediately when the issue arises. The team can then reassess task priorities, redistribute the workload if necessary, and break down tasks into smaller manageable pieces.
+
+ If a team member is not contributing or is uncooperative, we can address the issue respectfully in a private conversation. If the issue persists, bring it up with the professor.
+
+In terms of conflict resolution, any disagreements will be handled professionally through open discussion, focusing on the best outcome for the project rather than personal opinions.
+</p>
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- Link to external JavaScript file -->
+
+</body>
+</html>

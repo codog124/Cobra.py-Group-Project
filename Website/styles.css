@@ -1,0 +1,246 @@
+/* General page styling */
+body {
+    font-family: 'Comfortaa', sans-serif;
+    background-color: #6aad6d;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header section styling */
+header {
+    background: #004d00;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Styling for team logo image */
+.team-logo {
+    width: 150px; /* Adjust the size as needed */
+    margin-top: 10px;
+}
+
+/* Menu button styling */
+header nav {
+    margin-top: 10px;
+}
+
+header nav button {
+    background: #6eb840;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+header nav button:hover {
+    background: #0056b3;
+}
+
+/* Flex container for team bios and vision sections */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Card styling for member 1 */
+.card1 {
+    background: #666666;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    flex: 1 1 calc(30% - 40px);
+    text-align: center;
+    transition: transform 0.2s;
+    color: #f4f4f4;
+}
+
+.card1:hover {
+    transform: scale(1.05);
+}
+
+.card1 button {
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card1 button:hover {
+    background: #0056b3;
+}
+
+/* Card styling for member 2 */
+.card2 {
+    background: #666666;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    flex: 1 1 calc(30% - 40px);
+    text-align: center;
+    transition: transform 0.2s;
+    color: #f4f4f4;
+}
+
+.card2:hover {
+    transform: scale(1.05);
+}
+
+.card2 button {
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card2 button:hover {
+    background: #0056b3;
+}
+
+/* Card styling for member 3 */
+.card3 {
+    background: #666666;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    flex: 1 1 calc(30% - 40px);
+    text-align: center;
+    transition: transform 0.2s;
+    color: #f4f4f4;
+}
+
+.card3:hover {
+    transform: scale(1.05);
+}
+
+.card3 button {
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card3 button:hover {
+    background: #0056b3;
+}
+
+/* Card styling for member 4 */
+.card4 {
+    background: #666666;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    flex: 1 1 calc(30% - 40px);
+    text-align: center;
+    transition: transform 0.2s;
+    color: #f4f4f4;
+}
+
+.card4:hover {
+    transform: scale(1.05);
+}
+
+.card4 button {
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card4 button:hover {
+    background: #0056b3;
+}
+
+/* Card styling for member 5 (Nate) */
+.card5 {
+    background: #e08f6c;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    flex: 1 1 calc(30% - 40px);
+    text-align: center;
+    transition: transform 0.2s;
+    color: #f4f4f4;
+}
+
+.card5:hover {
+    transform: scale(1.05);
+}
+
+.card5 button {
+    background: #a37246;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card5 button:hover {
+    background: #0056b3;
+}
+
+h2 {
+    margin: 0 0 10px;
+}
+
+/* Initially hide bio details */
+.bio {
+    display: none;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.bio-img {
+    display: none;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.bio ul {
+    text-align: left;
+    color: #fff;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.bio a {
+    color: #e3e38f;
+    text-decoration: none;
+}
+
+/* Optional: add hover effect */
+.bio a:hover {
+    text-decoration: underline;
+    color: #CBB98A;
+}
+
+.mission-text {
+ color: #fff;
+}
+
+
+
