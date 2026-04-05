@@ -1,15 +1,26 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, DECIMAL, DATETIME
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime
+from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
-from datetime import datetime
 from ..dependencies.database import Base
-
 
 class Order(Base):
     __tablename__ = "orders"
 
-    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    customer_name = Column(String(100))
-    order_date = Column(DATETIME, nullable=False, server_default=str(datetime.now()))
-    description = Column(String(300))
+    id = Column(Integer, primary_key=True, index=True)
+    tracking_number = Column(String, unique=True)
 
-    order_details = relationship("OrderDetail", back_populates="order")
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=True)
+
+    guest_name = Column(String)
+    guest_phone = Column(String)
+    guest_address = Column(String)
+
+    status = Column(String, default="Received")
+    total_price = Column(Float)
+    order_type = Column(String)
+
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+    user = relationship("User", back_populates="orders")
+    items = relationship("OrderItem", back_populates="order")
+    payment = relationship("Payment", back_populates="order", uselist=False)
