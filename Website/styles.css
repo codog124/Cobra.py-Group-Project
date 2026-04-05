@@ -138,9 +138,9 @@ header nav button:hover {
     background: #0056b3;
 }
 
-/* Card styling for member 4 */
+/* Card styling for member 4 (Zaheir)*/
 .card4 {
-    background: #666666;
+    background: #7fffd4;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 10px;
@@ -156,7 +156,7 @@ header nav button:hover {
 }
 
 .card4 button {
-    background: #000000;
+    background: #4b39d5;
     color: white;
     border: none;
     padding: 10px 15px;
