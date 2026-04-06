@@ -50,7 +50,7 @@ header nav button:hover {
 
 /* Card styling for member 1 */
 .card1 {
-    background: #666666;
+    background: #2d4a3f;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 10px;
@@ -58,7 +58,7 @@ header nav button:hover {
     flex: 1 1 calc(30% - 40px);
     text-align: center;
     transition: transform 0.2s;
-    color: #f4f4f4;
+    color: #b8f3e8;
 }
 
 .card1:hover {
@@ -66,8 +66,8 @@ header nav button:hover {
 }
 
 .card1 button {
-    background: #000000;
-    color: white;
+    background: #7fffd4;
+    color: #1a3a33;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -75,7 +75,7 @@ header nav button:hover {
 }
 
 .card1 button:hover {
-    background: #0056b3;
+    background: #5fe3d0;
 }
 
 /* Card styling for member 2 */
