@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime
 
-class OrderDetailBase(BaseModel):
+class OrderItemBase(BaseModel):
     product_id: int
     quantity: int
     unit_price: float
@@ -18,7 +18,7 @@ class OrderBase(BaseModel):
 
 class OrderCreate(OrderBase):
     promo_code: Optional[str] = None
-    items: List[OrderDetailBase]
+    items: List[OrderItemBase]
 
 class OrderUpdate(BaseModel):
     status: Optional[str] = None

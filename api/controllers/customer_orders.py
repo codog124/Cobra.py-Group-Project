@@ -4,7 +4,7 @@ import uuid
 from datetime import datetime
 from ..dependencies.database import get_db
 from api.models.orders import Order
-from api.models.order_details import OrderDetail
+from api.models.order_items import OrderItem
 from api.models.products import Product
 from api.models.promotions import Promotion
 
@@ -60,7 +60,7 @@ def place_order(order_data: dict, db: Session = Depends(get_db)):
     db.flush()
 
     for item in order_items:
-        detail = OrderDetail(
+        detail = OrderItem(
             order_id=new_order.id,
             product_id=item["product_id"],
             quantity=item["quantity"],

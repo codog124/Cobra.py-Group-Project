@@ -22,5 +22,8 @@ class Order(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     user = relationship("User", back_populates="orders")
-    items = relationship("OrderItem", back_populates="order")
     payment = relationship("Payment", back_populates="order", uselist=False)
+    order_items = relationship(
+        "OrderItem",
+        back_populates="order"
+    )

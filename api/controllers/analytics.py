@@ -5,7 +5,7 @@ from datetime import date
 from typing import List
 from ..dependencies.database import get_db
 from api.models.orders import Order
-from api.models.order_details import OrderDetail
+from api.models.order_items import OrderItem
 from api.models.products import Product
 from api.models.reviews import Review
 
@@ -34,8 +34,8 @@ def get_daily_revenue(target_date: date, db: Session = Depends(get_db)):
 def get_dish_performance(limit: int = 5, db: Session = Depends(get_db)):
     performance = db.query(
         Product.name,
-        func.count(OrderDetail.id).label("total_sales")
-    ).join(OrderDetail, Product.id == OrderDetail.product_id, isouter=True) \
+        func.count(OrderItem.id).label("total_sales")
+    ).join(OrderItem, Product.id == OrderItem.product_id, isouter=True) \
         .group_by(Product.id) \
         .order_by("total_sales") \
         .limit(limit).all()
