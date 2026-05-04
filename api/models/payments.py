@@ -9,9 +9,9 @@ class Payment(Base):
     id = Column(Integer, primary_key=True, index=True)
 
     order_id = Column(Integer, ForeignKey("orders.id"))
-    method = Column(String)
-    status = Column(String)
-    amount = Column(Float)
+    method = Column(String(50), nullable=False)
+    amount = Column(Float, nullable=False)
+    status = Column(String(50))
 
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 

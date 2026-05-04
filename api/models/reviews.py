@@ -11,7 +11,7 @@ class Review(Base):
     menu_item_id = Column(Integer, ForeignKey("menu_items.id"))
 
     rating = Column(Integer)
-    comment = Column(String)
+    comment = Column(String(100))
 
     user = relationship("User", back_populates="reviews")
     menu_item = relationship("MenuItem", back_populates="reviews")
