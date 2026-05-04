@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from typing import List
 from ..dependencies.database import get_db
 from ..models.products import Product
+from ..schemas.products import ProductCreate, ProductRead, ProductUpdate
 
 
 router = APIRouter(
@@ -12,9 +13,9 @@ router = APIRouter(
 
 
 
-@router.post("/", status_code=status.HTTP_201_CREATED)
-def create_menu_item(product_in: dict, db: Session = Depends(get_db)):
-    new_product = Product(**product_in)
+@router.post("/", response_model=ProductRead, status_code=status.HTTP_201_CREATED)
+def create_menu_item(product_in: ProductCreate, db: Session = Depends(get_db)):
+    new_product = Product(**product_in.model_dump())
     db.add(new_product)
     db.commit()
     db.refresh(new_product)
@@ -22,10 +23,12 @@ def create_menu_item(product_in: dict, db: Session = Depends(get_db)):
 
 
 @router.put("/{product_id}")
-def update_menu_item(product_id: int, updates: dict, db: Session = Depends(get_db)):
+def update_menu_item(product_id: int, updates: ProductUpdate, db: Session = Depends(get_db)):
     product = db.query(Product).filter(Product.id == product_id).first()
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
+
+    update_data = updates.model_dump(exlude_unset=True)
 
     for key, value in updates.items():
         setattr(product, key, value)

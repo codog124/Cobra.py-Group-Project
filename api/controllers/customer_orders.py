@@ -7,6 +7,7 @@ from ..models.orders import Order
 from ..models.order_items import OrderItem
 from ..models.products import Product
 from ..models.promotions import Promotion
+from ..schemas.orders import OrderCreate
 
 router = APIRouter(
     prefix="/checkout",
@@ -15,7 +16,7 @@ router = APIRouter(
 
 
 @router.post("/place-order")
-def place_order(order_data: dict, db: Session = Depends(get_db)):
+def place_order(order_data: OrderCreate, db: Session = Depends(get_db)):
     order_type = order_data.get("order_type")
     if order_type not in ["takeout", "delivery"]:
         raise HTTPException(status_code=400, detail="Must specify 'takeout' or 'delivery'.")

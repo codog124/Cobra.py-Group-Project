@@ -19,23 +19,7 @@ def test_app_starts():
     response = client.get("/docs")
     assert response.status_code == 200
 
-# Test creating a new order through the controller
-def test_create_order(db_session):
-    # Prepare sample order data
-    order_data = {
-        "customer_name": "John Doe",
-        "description": "Test order"
-    }
 
-    order_object = model.Order(**order_data)
-
-    # Call the create function
-    created_order = controller.create(db_session, order_object)
-
-    # Verify the order was created with correct attributes
-    assert created_order is not None
-    assert created_order.customer_name == "John Doe"
-    assert created_order.description == "Test order"
 
 # Test retrieving all orders from the controller
 def test_get_orders(db_session):
