@@ -4,6 +4,7 @@ from datetime import datetime
 from typing import List
 from ..dependencies.database import get_db
 from api.models.promotions import Promotion
+from ..schemas.promotion import PromotionCreate, PromotionRead
 
 router = APIRouter(
     prefix="/promotions",
@@ -13,12 +14,15 @@ router = APIRouter(
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
-def create_promo_code(promo_in: dict, db: Session = Depends(get_db)):
-    existing = db.query(Promotion).filter(Promotion.code == promo_in['code']).first()
+def create_promo_code(
+    promo_in: PromotionCreate,
+    db: Session = Depends(get_db)
+):
+    existing = db.query(Promotion).filter(Promotion.code == promo_in.code).first()
     if existing:
         raise HTTPException(status_code=400, detail="Promo code already exists")
 
-    new_promo = Promotion(**promo_in)
+    new_promo = Promotion(**promo_in.dict())
     db.add(new_promo)
     db.commit()
     db.refresh(new_promo)
