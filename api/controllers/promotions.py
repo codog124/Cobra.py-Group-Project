@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from datetime import datetime
 from typing import List
 from ..dependencies.database import get_db
-from api.models.promotions import Promotion
+from ..models.promotions import Promotion
 from ..schemas.promotion import PromotionCreate, PromotionRead
 
 router = APIRouter(

@@ -4,13 +4,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from .routers import index as indexRoute
 from .models import model_loader
 from .dependencies.config import conf
-from api.controllers import products
-from api.controllers import analytics
-from api.controllers import promotions
-from api.controllers import customer_orders
-from api.controllers import order_tracking
-from api.controllers import payments
-from api.controllers import reviews
+from .controllers import products
+from .controllers import analytics
+from .controllers import promotions
+from .controllers import customer_orders
+from .controllers import order_tracking
+from .controllers import payments
+from .controllers import reviews
 
 
 app = FastAPI()

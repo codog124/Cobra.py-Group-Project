@@ -4,10 +4,10 @@ from sqlalchemy import func, desc
 from datetime import date
 from typing import List
 from ..dependencies.database import get_db
-from api.models.orders import Order
-from api.models.order_items import OrderItem
-from api.models.products import Product
-from api.models.reviews import Review
+from ..models.orders import Order
+from ..models.order_items import OrderItem
+from ..models.products import Product
+from ..models.reviews import Review
 
 router = APIRouter(
     prefix="/analytics",

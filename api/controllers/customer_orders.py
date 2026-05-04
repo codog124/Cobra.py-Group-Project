@@ -3,10 +3,10 @@ from sqlalchemy.orm import Session
 import uuid
 from datetime import datetime
 from ..dependencies.database import get_db
-from api.models.orders import Order
-from api.models.order_items import OrderItem
-from api.models.products import Product
-from api.models.promotions import Promotion
+from ..models.orders import Order
+from ..models.order_items import OrderItem
+from ..models.products import Product
+from ..models.promotions import Promotion
 
 router = APIRouter(
     prefix="/checkout",
