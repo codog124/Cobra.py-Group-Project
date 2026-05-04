@@ -5,7 +5,7 @@ class Promotion(Base):
     __tablename__ = "promotions"
 
     id = Column(Integer, primary_key=True, index=True)
-    code = Column(String, unique=True)
+    code = Column(String(50), unique=True)
     discount_percent = Column(Float)
     expiration_date = Column(DateTime)
     active = Column(Boolean, default=True)

@@ -6,9 +6,9 @@ class MenuItem(Base):
     __tablename__ = "menu_items"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, nullable=False)
-    description = Column(String)
-    ingredients = Column(String)
+    name = Column(String(50), nullable=False)
+    description = Column(String(50))
+    ingredients = Column(String(50))
     price = Column(Float, nullable=False)
     calories = Column(Integer)
 
